@@ -1,18 +1,22 @@
 import './App.css';
+import Alert from './Alert';
 import Accordion from './Accordion';
 import AccordionItem from './AccordionItem';
 import 'bootstrap/dist/css/bootstrap.css';
+import { useState } from 'react';
 
 function App() {
-  /*const accordionToggle = (state) => {
-    console.log('toggled: ' + state)
-    this.state.
-  }*/
+  const [alertVisible, setAlertVisible] = useState(true);
+
+  const closeAlert = () => {
+    setAlertVisible(false);
+  }
 
   return (
     <div className="App">
       <div className="container">
-        <h1>Accordion</h1>
+        <h1>React Bootstrap Components</h1>
+        <h2>Accordion</h2>
 
         <Accordion accID="accordionEx">
           <AccordionItem title="Item 1" accID="One">
@@ -36,7 +40,14 @@ function App() {
           </div>
           </AccordionItem>
         </Accordion>
+
+        <h2 class="mt-5">Alert</h2>
+
+        { alertVisible &&
+        <Alert onClose={() => closeAlert()}>This is an alert</Alert>}
       </div>
+
+      
     </div>
   );
 }
