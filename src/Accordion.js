@@ -4,14 +4,8 @@ const AccordionContext = createContext();
 
 function Accordion(props) {
     const [accordionData, setAccordionData] = useState({activeItem : -1});
-    //const [accordionIndex, setAccordionIndex] = useState(0);
 
-    //console.log(props.children)
-
-    /*props.children.map((child, index) => {
-        child.props.key = index;
-    });*/
-
+    // Add an index for each child
     const children = Children.map(props.children, (child, index) => {
         return cloneElement(child, {index});
     });

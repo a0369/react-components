@@ -6,10 +6,6 @@ function Alert({children, dismissable = true, onClose}) {
             <button type="button"
                 className="btn-close"
                 aria-label="Close"
-                /*onClick={() => {
-                    //CloseAlert()
-                    onClose()
-                }}*/
                 onClick={onClose}></button>}
         </div>
     )

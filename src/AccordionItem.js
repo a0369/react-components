@@ -3,6 +3,10 @@ import { useAccordionContext } from './Accordion';
 function AccordionItem(props) {
     const {accordionData, setAccordionData} = useAccordionContext();
 
+    /*
+    *   Check if current index is set the children index
+    *   @returns boolean
+    */
     const chkOpened = () => {
         return (props.index === accordionData.activeItem);
     };
